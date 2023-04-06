@@ -27,6 +27,8 @@ const convertF = document.querySelector("#fahrenheit-link");
 convertF.addEventListener("click", showFahrenheit);
 */
 
+/** */
+
 const button = document.querySelector(".location-button");
 button.addEventListener("click", getCurrentPosition);
 
