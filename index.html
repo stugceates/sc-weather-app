@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <meta charset="UTF-8" />
+    <link href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container weather-app border">
+      <div class="search-bar">
+        <h2 class="searching"></h2>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="text"
+            placeholder="Enter city name..."
+            id="search-input"
+          />
+          <button class="btn btn-outline-success search-button" type="submit">
+            Search
+          </button>
+          <button class="btn btn-outline-warning location-button" type="submit">
+            Location
+          </button>
+        </form>
+      </div>
+      <div class="row current-weather">
+        <div class="current-city col-md-9">
+          <h1 class="city-name">Cambridge</h1>
+          <h2 class="current-date">Wednesday, 12:30pm</h2>
+        </div>
+        <div class="weather-image col-md-3">
+          <h3>Cloudy</h3>
+          <div class="weather-emoji">☁️</div>
+          <div class="current-temp">
+            <h2 class="temp-value">8</h2>
+            <span class="units">
+              <a href="#" id="celsius-link">°C</a> |
+              <a href="#" id="fahrenheit-link">°F</a>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row next-forecast">
+        <div class="col-md-1"></div>
+        <div class="col-md-2 border forecast">
+          <h4 class="forecast-day">Thu</h4>
+          <div class="weather-emoji">☀️</div>
+          <div class="temperature">3°C</div>
+        </div>
+        <div class="col-md-2 border forecast">
+          <h4 class="forecast-day">Fri</h4>
+          <div class="weather-emoji">☁️</div>
+          <div class="temperature">3°C</div>
+        </div>
+        <div class="col-md-2 border forecast">
+          <h4 class="forecast-day">Sat</h4>
+          <div class="weather-emoji">🌦️</div>
+          <div class="temperature">3°C</div>
+        </div>
+        <div class="col-md-2 border forecast">
+          <h4 class="forecast-day">Sun</h4>
+          <div class="weather-emoji">🌤️</div>
+          <div class="temperature">3°C</div>
+        </div>
+        <div class="col-md-2 border forecast">
+          <h4 class="forecast-day">Mon</h4>
+          <div class="weather-emoji">☀️</div>
+          <div class="temperature">3°C</div>
+        </div>
+      </div>
+    </div>
+    <script src="src/main.js"></script>
+  </body>
+</html>

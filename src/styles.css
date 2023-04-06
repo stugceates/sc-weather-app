@@ -1,0 +1,70 @@
+body{
+    color: #fff;
+    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+    
+}
+
+.weather-app{
+    background: linear-gradient(to top, #09203f 0%, #537895 100%);
+    margin: 50px auto;
+    padding: 30px 30px;
+    display: block;
+    border-radius: 20px;
+    font-family: 'roboto', sans-serif;
+
+}
+.current-weather{
+	margin: 50px 0;
+}
+.search-button{
+    color: black;
+    background-color: #fff;
+    border-color: #fff;
+    margin-right: 10px;
+}
+.location-button{
+    color: black;
+    background-color: #fff;
+    border-color: #fff;
+    margin-right: 10px;
+}
+.weather-image{
+	border-radius: 20px;
+	text-align: center;
+}
+h1.city-name {
+    margin-bottom: 5px;
+    font-size: 36px;
+    font-weight: 400;	
+}
+h2{
+	font-size: 24px;
+	font-weight: 200;
+	margin-bottom: 5px;
+}
+h2.current-time {
+	font-size: 18px;
+}
+a{
+    text-decoration: none;
+}
+h3{
+	text-align: center;
+}
+.current-temp{
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 40px;
+}
+.next-forecast{
+    text-align: center;
+    margin-top: 20px;
+}
+.forecast{
+    border-radius: 10px;
+    margin-right: 5px;
+    padding: 0;
+}
+.weather-emoji{
+    font-size: 32px;
+}
