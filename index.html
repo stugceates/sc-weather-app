@@ -20,77 +20,89 @@
   </head>
 
   <body>
-    <div class="container weather-app border">
-      <div class="search-bar">
-        <h2 class="searching"></h2>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="text"
-            placeholder="Enter city name..."
-            id="search-input"
-          />
-          <button class="btn btn-outline-success search-button" type="submit">
-            Search
-          </button>
-          <button class="btn btn-outline-warning location-button" type="submit">
-            Location
-          </button>
-        </form>
-      </div>
-      <div class="row current-weather">
-        <div class="current-city col-md-9">
-          <h1 class="city-name">Cambridge</h1>
-          <h2 class="current-date">Wednesday, 12:30pm</h2>
+    <div class="div weather-app-wrapper">
+      <div class="container weather-app border">
+        <div class="search-bar">
+          <h2 class="searching"></h2>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="text"
+              placeholder="Enter city name..."
+              id="search-input"
+            />
+            <button class="btn btn-outline-success search-button" type="submit">
+              Search
+            </button>
+            <button
+              class="btn btn-outline-warning location-button"
+              type="submit"
+            >
+              Location
+            </button>
+          </form>
         </div>
-        <div class="weather-image col-md-3">
-          <h3>Cloudy</h3>
-          <div class="weather-emoji">☁️</div>
-          <div class="current-temp">
-            <h2 class="temp-value">8</h2>
-            <span class="units">
-              <a href="#" id="celsius-link">°C</a> |
-              <a href="#" id="fahrenheit-link">°F</a>
-            </span>
+        <div class="row current-weather">
+          <div class="current-city col-md-9">
+            <h1 class="city-name">Cambridge</h1>
+            <ul class="current-weather-values">
+              <li class="day">Wednesday, 12:30pm</li>
+              <li class="humidity">Humidity: %25</li>
+              <li class="wind">Wind: 12km/h</li>
+            </ul>
+          </div>
+          <div class="weather-image col-md-3">
+            <ul>
+              <h3>Cloudy</h3>
+              <li class="weather-emoji">☁️</li>
+              <span class="temp-value">8</span>
+              <div class="current-temp">
+                <span class="units">
+                  <a href="#" id="celsius-link">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+                </span>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="row next-forecast">
+          <div class="col-md-1"></div>
+          <div class="col-md-2 border forecast">
+            <h4 class="forecast-day">Thu</h4>
+            <div class="weather-emoji">☀️</div>
+            <div class="temperature">3°C</div>
+          </div>
+          <div class="col-md-2 border forecast">
+            <h4 class="forecast-day">Fri</h4>
+            <div class="weather-emoji">☁️</div>
+            <div class="temperature">3°C</div>
+          </div>
+          <div class="col-md-2 border forecast">
+            <h4 class="forecast-day">Sat</h4>
+            <div class="weather-emoji">🌦️</div>
+            <div class="temperature">3°C</div>
+          </div>
+          <div class="col-md-2 border forecast">
+            <h4 class="forecast-day">Sun</h4>
+            <div class="weather-emoji">🌤️</div>
+            <div class="temperature">3°C</div>
+          </div>
+          <div class="col-md-2 border forecast">
+            <h4 class="forecast-day">Mon</h4>
+            <div class="weather-emoji">☀️</div>
+            <div class="temperature">3°C</div>
           </div>
         </div>
       </div>
-      <div class="row next-forecast">
-        <div class="col-md-1"></div>
-        <div class="col-md-2 border forecast">
-          <h4 class="forecast-day">Thu</h4>
-          <div class="weather-emoji">☀️</div>
-          <div class="temperature">3°C</div>
-        </div>
-        <div class="col-md-2 border forecast">
-          <h4 class="forecast-day">Fri</h4>
-          <div class="weather-emoji">☁️</div>
-          <div class="temperature">3°C</div>
-        </div>
-        <div class="col-md-2 border forecast">
-          <h4 class="forecast-day">Sat</h4>
-          <div class="weather-emoji">🌦️</div>
-          <div class="temperature">3°C</div>
-        </div>
-        <div class="col-md-2 border forecast">
-          <h4 class="forecast-day">Sun</h4>
-          <div class="weather-emoji">🌤️</div>
-          <div class="temperature">3°C</div>
-        </div>
-        <div class="col-md-2 border forecast">
-          <h4 class="forecast-day">Mon</h4>
-          <div class="weather-emoji">☀️</div>
-          <div class="temperature">3°C</div>
-        </div>
-      </div>
+      <footer>
+        This project was coded by Selin Ates and is
+        <a href="https://github.com/stugceates/sc-weather-app">
+          open-sourced on Github</a
+        >
+        and hosted on Netlify
+      </footer>
     </div>
-    <footer>
-      This project was coded by Selin Ates and is
-      <a href="https://github.com/stugceates/sc-weather-app">
-        open-sourced on Github</a
-      >
-      and hosted on Netlify
-    </footer>
+
     <script src="src/main.js"></script>
   </body>
 </html>

@@ -3,10 +3,13 @@ body{
     background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
     
 }
-
+.weather-app-wrapper{
+    max-width: 800px;
+    margin: 50px auto;
+    display: block;
+}
 .weather-app{
     background: linear-gradient(to top, #09203f 0%, #537895 100%);
-    margin: 50px auto;
     margin-bottom: 20px;
     padding: 30px 30px;
     display: block;
@@ -15,7 +18,9 @@ body{
 
 }
 .current-weather{
-	margin: 50px 0;
+    margin: 50px 0;
+    display: flex;
+    align-items: center; 
 }
 .search-button{
     color: black;
@@ -38,13 +43,14 @@ h1.city-name {
     font-size: 36px;
     font-weight: 400;	
 }
-h2{
-	font-size: 24px;
-	font-weight: 200;
-	margin-bottom: 5px;
+ul{
+    padding: 0;
 }
-h2.current-time {
-	font-size: 18px;
+li {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 100;
+    margin-bottom: 5px;
 }
 a{
     text-decoration: none;
@@ -55,7 +61,7 @@ h3{
 .current-temp{
     font-size: 20px;
     font-weight: 200;
-    margin-bottom: 40px;
+    margin-bottom: 20   px;
 }
 .next-forecast{
     text-align: center;
@@ -66,8 +72,10 @@ h3{
     margin-right: 5px;
     padding: 0;
 }
-.weather-emoji{
+li.weather-emoji{
+    margin-bottom: 0;
     font-size: 32px;
+    line-height: 30vpx;
 }
 
 footer{
