@@ -1,6 +1,6 @@
 const now = new Date();
 
-const dateElement = document.querySelector("h2.current-date");
+const dateElement = document.querySelector("li.day");
 const days = [
   "Sunday",
   "Monday",
@@ -19,15 +19,11 @@ const tempCelsius = 8;
 const cityName = document.querySelector("form");
 cityName.addEventListener("submit", submitForm);
 
-/*
 const convertCel = document.querySelector("#celsius-link");
 convertCel.addEventListener("click", showCelsius);
 
 const convertF = document.querySelector("#fahrenheit-link");
 convertF.addEventListener("click", showFahrenheit);
-*/
-
-/** */
 
 const button = document.querySelector(".location-button");
 button.addEventListener("click", getCurrentPosition);
@@ -40,22 +36,21 @@ function submitForm(event) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=50c2acd53349fabd54f52b93c8650d37`;
   axios.get(url).then(function (response) {
     const temp = Math.round(response.data.main.temp);
-    document.querySelector("h2.temp-value").innerHTML = temp;
+    document.querySelector("span.temp-value").innerHTML = temp;
   });
 }
 
-/*
 function showCelsius(event) {
   event.preventDefault();
-  document.querySelector("h2.temp-value").innerHTML = tempCelsius;
+  document.querySelector("span.temp-value").innerHTML = tempCelsius;
 }
 
 function showFahrenheit(event) {
   event.preventDefault();
   const cToFahr = (tempCelsius * 9) / 5 + 32;
-  document.querySelector("h2.temp-value").innerHTML = cToFahr;
+  document.querySelector("span.temp-value").innerHTML = cToFahr;
 }
-*/
+
 function showPosition(position){
   console.log(position.coords.latitude);
   console.log(position.coords.longitude);
@@ -64,3 +59,5 @@ function showPosition(position){
 function getCurrentPosition(){
   navigator.geolocation.getCurrentPosition(position);
 }
+
+
