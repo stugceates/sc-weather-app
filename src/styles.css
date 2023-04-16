@@ -52,11 +52,16 @@ li {
     font-weight: 100;
     margin-bottom: 5px;
 }
-li.weather-description{
+.weather-condition{
     text-align: center;
     font-size: 24px;
     font-weight: 400;
 }
+
+#description{
+    text-transform: capitalize;
+}
+
 a{
     text-decoration: none;
 }
@@ -68,7 +73,7 @@ h3{
 .current-temp{
     font-size: 20px;
     font-weight: 200;
-    margin-bottom: 20   px;
+    margin-bottom: 20px;
 }
 .next-forecast{
     text-align: center;
@@ -79,10 +84,10 @@ h3{
     margin-right: 5px;
     padding: 0;
 }
-li.weather-emoji{
+#weather-emoji{
     margin-bottom: 0;
     font-size: 32px;
-    line-height: 30vpx;
+    line-height: 30px;
 }
 
 footer{

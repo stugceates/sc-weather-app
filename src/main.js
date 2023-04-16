@@ -26,21 +26,35 @@ convertCel.addEventListener("click", showCelsius);
 const convertF = document.querySelector("#fahrenheit-link");
 convertF.addEventListener("click", showFahrenheit);
 
-navigator.geolocation.getCurrentPosition(showPosition);
+const locationButtonElement = document.querySelector("#location-button");
+locationButtonElement.addEventListener("click", getLocation);
 
+getLocation();
+
+function getLocation (){
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+function displayData(response) {
+  document.querySelector("#description").innerHTML = response.data.condition.description;
+  document.querySelector("#weather-emoji img").src = response.data.condition.icon_url;
+  document.querySelector("#humidity span").innerHTML = response.data.temperature.humidity;
+  document.querySelector("#wind span").innerHTML = response.data.wind.speed;
+  const temp = Math.round(response.data.temperature.current);
+  tempCelsius = temp
+  document.querySelector("#temp-value").innerHTML = temp;
+
+  document.querySelector("h1.city-name").innerHTML = response.data.city;
+}
 
 function submitForm(event) {
   event.preventDefault();
   const searchInput = document.querySelector("#search-input");
   const cityName = searchInput.value;
-  document.querySelector("h1.city-name").innerHTML = cityName;
-  let url = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=fa2f0ab0044e0f6ed0fo3e30511f6tbc&units=metric`;
-  axios.get(url).then(function (response) {
-    const temp = Math.round(response.data.temperature.current);
-    tempCelsius = temp
-    document.querySelector("li.temp-value").innerHTML = temp;
-  });
-  
+  if (searchInput.value) {
+    document.querySelector("h1.city-name").innerHTML = cityName;
+    let url = `https://api.shecodes.io/weather/v1/current?query=${cityName}&key=fa2f0ab0044e0f6ed0fo3e30511f6tbc&units=metric`;
+    axios.get(url).then(displayData);
+  }
 }
 
 function showCelsius(event) {
@@ -60,14 +74,9 @@ function showPosition(position){
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
   let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=fa2f0ab0044e0f6ed0fo3e30511f6tbc&units=metric`;
-  axios.get(url).then(function (response) {
-    const temp = Math.round(response.data.temperature.current);
-    tempCelsius = temp
-    document.querySelector("li.temp-value").innerHTML = temp;
-    const cityName = response.data.city;
-    document.querySelector("h1.city-name").innerHTML = cityName;
-  }); 
+  axios.get(url).then(displayData); 
 }
+
 
 
 

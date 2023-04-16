@@ -37,6 +37,7 @@
             </button>
             <button
               class="btn btn-outline-warning location-button"
+              id="location-button"
               type="button"
             >
               Location
@@ -48,16 +49,16 @@
             <h1 class="city-name">-</h1>
             <ul class="current-weather-values">
               <li class="day">Wednesday, 12:30pm</li>
-              <li id="humidity">Humidity: %25</li>
-              <li class="wind">Wind: 12km/h</li>
+              <li id="humidity">Humidity: <span></span>%</li>
+              <li id="wind">Wind: <span></span>km/h</li>
             </ul>
           </div>
-          <div class="weather-image col-md-3">
+          <div class="weather-condition col-md-3">
             <ul>
               <li id="description">Cloudy</li>
-              <li class="weather-emoji">☁️</li>
-              <li class="temp-value">-</li>
-              <li class="temperature-units">
+              <li id="weather-emoji"><img /></li>
+              <li id="temp-value">-</li>
+              <li id="temperature-units">
                 <span class="units">
                   <a href="#" id="celsius-link">°C</a> |
                   <a href="#" id="fahrenheit-link">°F</a>
