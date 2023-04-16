@@ -1,21 +1,5 @@
-const now = new Date();
-
-const dateElement = document.querySelector("li.day");
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-const day = days[now.getDay()];
-const hours = now.getHours().toString().padStart(2, "0");
-const minutes = now.getMinutes().toString().padStart(2, "0");
-dateElement.innerHTML = `${day}, ${hours}:${minutes}`;
 let tempCelsius = "-";
-let position;
+
 
 const searchForm = document.querySelector("form");
 searchForm.addEventListener("submit", submitForm);
@@ -34,11 +18,33 @@ getLocation();
 function getLocation (){
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+function formatDate(timestamp){
+  const now = new Date(timestamp*1000);
+  console.log(now);
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  const day = days[now.getDay()];
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const formattedDate = `${day}, ${hours}:${minutes}`
+  return formattedDate
+}
+
 function displayData(response) {
   document.querySelector("#description").innerHTML = response.data.condition.description;
   document.querySelector("#weather-emoji img").src = response.data.condition.icon_url;
   document.querySelector("#humidity span").innerHTML = response.data.temperature.humidity;
   document.querySelector("#wind span").innerHTML = response.data.wind.speed;
+  const timestamp = response.data.time;
+  document.querySelector("li.day").innerHTML = formatDate(timestamp);
   const temp = Math.round(response.data.temperature.current);
   tempCelsius = temp
   document.querySelector("#temp-value").innerHTML = temp;
@@ -69,8 +75,6 @@ function showFahrenheit(event) {
 }
 
 function showPosition(position){
-  /*console.log(position.coords.latitude);
-  console.log(position.coords.longitude);*/
   let lon = position.coords.longitude;
   let lat = position.coords.latitude;
   let url = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=fa2f0ab0044e0f6ed0fo3e30511f6tbc&units=metric`;
