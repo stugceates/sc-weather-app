@@ -65,13 +65,13 @@ function submitForm(event) {
 
 function showCelsius(event) {
   event.preventDefault();
-  document.querySelector("li.temp-value").innerHTML = tempCelsius;
+  document.querySelector("#temp-value").innerHTML = tempCelsius;
 }
 
 function showFahrenheit(event) {
   event.preventDefault();
   const cToFahr = (tempCelsius * 9) / 5 + 32;
-  document.querySelector("li.temp-value").innerHTML = cToFahr;
+  document.querySelector("#temp-value").innerHTML = cToFahr;
 }
 
 function showPosition(position){
