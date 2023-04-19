@@ -1,7 +1,7 @@
 body{
     color: #fff;
     background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
-    
+    height: 100vh;
 }
 .weather-app-wrapper{
     max-width: 800px;
@@ -9,13 +9,24 @@ body{
     display: block;
 }
 .weather-app{
-    background: linear-gradient(to top, #09203f 0%, #537895 100%);
     margin-bottom: 20px;
     padding: 30px 30px;
     display: block;
     border-radius: 20px;
     font-family: 'roboto', sans-serif;
+}
+.day-bg{
+    background-image: url("../images/daytime.jpg");
+    color: #09203f;
+    border-color: #09203f;
+    background-size: cover;
+}
 
+.night-bg{
+    background-image: url("../images/nighttime.jpg") ;
+    color: #fff;
+    border-color: #fff;
+    background-size: cover;
 }
 .current-weather{
     margin: 50px 0;
@@ -23,21 +34,18 @@ body{
     align-items: center; 
 }
 .search-button{
-    color: black;
+    color: #09203f;
     background-color: #fff;
     border-color: #fff;
     margin-right: 10px;
 }
 .location-button{
-    color: black;
+    color: #09203f;
     background-color: #fff;
     border-color: #fff;
     margin-right: 10px;
 }
-.weather-image{
-	border-radius: 20px;
-	text-align: center;
-}
+
 h1.city-name {
     margin-bottom: 5px;
     font-size: 36px;
@@ -75,19 +83,22 @@ h3{
     font-weight: 200;
     margin-bottom: 20px;
 }
-.next-forecast{
+.weather-forecast{
+    display: block;
     text-align: center;
-    margin-top: 20px;
+    margin: 0 auto;
 }
+
 .forecast{
     border-radius: 10px;
     margin-right: 5px;
     padding: 0;
+    background-color:rgba(208, 208, 208, 0.6);
 }
-#weather-emoji{
-    margin-bottom: 0;
-    font-size: 32px;
-    line-height: 30px;
+
+.forecast-day{
+    font-size: 20px;
+    font-weight: 400;
 }
 
 footer{
