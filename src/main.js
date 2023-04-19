@@ -125,8 +125,8 @@ function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row justify-content-center">`;
-  forecast.forEach(function(forescastDay, index){
-    if (index < 5){
+  forecast.splice(-2)
+  forecast.forEach(function(forescastDay){
     forecastHTML = 
       forecastHTML + 
       `<div class="col-md-2 border forecast">
@@ -134,8 +134,7 @@ function displayForecast(response){
         <div class="weather-emoji"><img src="${forescastDay.condition.icon_url}"/></div>
         <div class="forecast-temperature">${Math.round(forescastDay.temperature.day)}</div>
       </div>`;
-  }
-});
+  });  
   forecastHTML = forecastHTML + `</div>` ;
   forecastElement.innerHTML = forecastHTML;
 }
