@@ -1,6 +1,6 @@
 body{
     color: #fff;
-    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);        
     height: 100vh;
 }
 .weather-app-wrapper{
